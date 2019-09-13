@@ -13,6 +13,7 @@
 		CB347DC3232C221A0023577D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB347DC1232C221A0023577D /* LaunchScreen.storyboard */; };
 		CB347DCE232C221A0023577D /* jeapordusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DCD232C221A0023577D /* jeapordusTests.swift */; };
 		CB347DD9232C221A0023577D /* jeapordusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DD8232C221A0023577D /* jeapordusUITests.swift */; };
+		CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DEC232C2BD20023577D /* JeopordyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		CB347DD4232C221A0023577D /* jeapordusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jeapordusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB347DD8232C221A0023577D /* jeapordusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jeapordusUITests.swift; sourceTree = "<group>"; };
 		CB347DDA232C221A0023577D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB347DEC232C2BD20023577D /* JeopordyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopordyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		CB347DE6232C29AB0023577D /* API Client */ = {
 			isa = PBXGroup;
 			children = (
+				CB347DEC232C2BD20023577D /* JeopordyAPI.swift */,
 			);
 			path = "API Client";
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */,
 				CB347DB9232C22180023577D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
