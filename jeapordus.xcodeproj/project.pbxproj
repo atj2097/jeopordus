@@ -14,6 +14,10 @@
 		CB347DCE232C221A0023577D /* jeapordusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DCD232C221A0023577D /* jeapordusTests.swift */; };
 		CB347DD9232C221A0023577D /* jeapordusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DD8232C221A0023577D /* jeapordusUITests.swift */; };
 		CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DEC232C2BD20023577D /* JeopordyAPI.swift */; };
+		CB347DEF232C2C490023577D /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DEE232C2C490023577D /* GameModel.swift */; };
+		CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF0232C2C5D0023577D /* JepViewController.swift */; };
+		CB347DF3232C2C6A0023577D /* JeopDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF2232C2C6A0023577D /* JeopDVC.swift */; };
+		CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF4232C2C780023577D /* newtorkHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		CB347DD8232C221A0023577D /* jeapordusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jeapordusUITests.swift; sourceTree = "<group>"; };
 		CB347DDA232C221A0023577D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB347DEC232C2BD20023577D /* JeopordyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopordyAPI.swift; sourceTree = "<group>"; };
+		CB347DEE232C2C490023577D /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		CB347DF0232C2C5D0023577D /* JepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JepViewController.swift; sourceTree = "<group>"; };
+		CB347DF2232C2C6A0023577D /* JeopDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopDVC.swift; sourceTree = "<group>"; };
+		CB347DF4232C2C780023577D /* newtorkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newtorkHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 		CB347DE7232C29B90023577D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB347DF4232C2C780023577D /* newtorkHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -145,6 +154,7 @@
 		CB347DE8232C29C50023577D /* DVC */ = {
 			isa = PBXGroup;
 			children = (
+				CB347DF2232C2C6A0023577D /* JeopDVC.swift */,
 			);
 			path = DVC;
 			sourceTree = "<group>";
@@ -152,6 +162,7 @@
 		CB347DE9232C29CE0023577D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB347DF0232C2C5D0023577D /* JepViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -159,6 +170,7 @@
 		CB347DEA232C29E80023577D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB347DEE232C2C490023577D /* GameModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,8 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */,
+				CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */,
 				CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */,
 				CB347DB9232C22180023577D /* AppDelegate.swift in Sources */,
+				CB347DEF232C2C490023577D /* GameModel.swift in Sources */,
+				CB347DF3232C2C6A0023577D /* JeopDVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
