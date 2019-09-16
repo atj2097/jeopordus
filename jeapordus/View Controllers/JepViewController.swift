@@ -17,8 +17,32 @@ class JepViewController: UIViewController {
     
     
     @IBAction func buttonFunction(_ sender: UIButton) {
+        var url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+        var id = sender.tag
+        var mode = ""
+        switch sender.titleLabel?.text {
+        case "$200":
+        return mode = "easy"
+        case "$400":
+        return mode = "medium"
+        case "$600":
+        return   mode = "hard"
+        default:
+            "bla"
+        }
+        url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=easy&type=multiple"
+        loadData()
     }
     
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let showVc = segue.destination as? EpisodeViewController else {
+//            fatalError("Unexpected segue")
+//        }
+//        guard let selectedIndexPath = showTableVIew.indexPathForSelectedRow
+//            else { fatalError("No row selected") }
+//
+//    }
 
     
     override func viewDidLoad() {
@@ -26,19 +50,26 @@ class JepViewController: UIViewController {
         
 //        self.navigationItem.title = currentUser?.name
         
-        
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadData(){
+        TriviaWrapper.fetchTriviaData{ (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let triviaData):
+                DispatchQueue.main.async{
+                    return self.trivia = triviaData
+                }
+            }
+        }
     }
-    */
-
+    
+    
 }
+//TODO: -- add function to get data
+
+
+
+
+
