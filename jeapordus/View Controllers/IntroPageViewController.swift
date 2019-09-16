@@ -47,7 +47,7 @@ class IntroPageViewController: UIViewController {
             guard let destinationVC = segue.destination as? JepViewController else {fatalError("unexpected segueVC")}
 //            userIntial?.name = nameField.textm
             destinationVC.currentUser = userIntial
-            destinationVC.navigationItem.title = userIntial?.name
+            //destinationVC.navigationItem.title = userIntial?.name
         default:
             print(fatalError("Not Workiong"))
         }
