@@ -197,33 +197,6 @@
                                     <color key="titleColor" red="0.97877007719999998" green="0.94440072770000005" blue="0.32134842870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6S-ZX-dD5">
-                                <rect key="frame" x="13" y="577" width="117" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.019769040870000001" green="0.059468880299999999" blue="0.23531037569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="$600">
-                                    <color key="titleColor" red="0.97877007719999998" green="0.94440072770000005" blue="0.32134842870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-mc-NER">
-                                <rect key="frame" x="149" y="577" width="117" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.019769040870000001" green="0.059468880299999999" blue="0.23531037569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="$800">
-                                    <color key="titleColor" red="0.97877007719999998" green="0.94440072770000005" blue="0.32134842870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60n-aX-1aw">
-                                <rect key="frame" x="282" y="577" width="117" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.019769040870000001" green="0.059468880299999999" blue="0.23531037569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="$800">
-                                    <color key="titleColor" red="0.97877007719999998" green="0.94440072770000005" blue="0.32134842870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="p0I-1S-d3H"/>
@@ -233,6 +206,14 @@
                         <outlet property="topicThree" destination="x9I-1L-oSA" id="fra-9z-HFM"/>
                         <outlet property="topicTwo" destination="CRZ-S5-TuL" id="iqF-Zf-Jzw"/>
                         <outletCollection property="gameButtons" destination="Nw5-Tx-TKq" collectionClass="NSMutableArray" id="bGm-bR-Cf6"/>
+                        <outletCollection property="gameButtons" destination="SDg-90-GL8" collectionClass="NSMutableArray" id="2sL-Ph-nNn"/>
+                        <outletCollection property="gameButtons" destination="j9r-sN-A61" collectionClass="NSMutableArray" id="KhZ-aC-197"/>
+                        <outletCollection property="gameButtons" destination="Zci-q4-Erj" collectionClass="NSMutableArray" id="mKI-M1-g8P"/>
+                        <outletCollection property="gameButtons" destination="pI2-i3-Tf8" collectionClass="NSMutableArray" id="y1R-sI-JAx"/>
+                        <outletCollection property="gameButtons" destination="cO8-6w-ITe" collectionClass="NSMutableArray" id="wCQ-YG-3HD"/>
+                        <outletCollection property="gameButtons" destination="DsK-GJ-cUN" collectionClass="NSMutableArray" id="TMp-xx-KOn"/>
+                        <outletCollection property="gameButtons" destination="q7Y-DM-dAW" collectionClass="NSMutableArray" id="vne-19-r2j"/>
+                        <outletCollection property="gameButtons" destination="gOB-Vj-BeZ" collectionClass="NSMutableArray" id="Iyf-TQ-mzx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cn5-4m-dQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
