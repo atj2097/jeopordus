@@ -12,7 +12,7 @@ class JepViewController: UIViewController {
     @IBOutlet weak var topicOne: UILabel!
     @IBOutlet weak var topicTwo: UILabel!
     @IBOutlet weak var randomTopic: UILabel!
-    var currentUser: User?
+    var currentUser: User!
     @IBOutlet var gameButtons: [UIButton]!
     
     
@@ -48,10 +48,13 @@ class JepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationItem.title = currentUser?.name
+    
+        
+        self.navigationItem.title = currentUser?.name
         
     }
     
+
     private func loadData(){
         TriviaWrapper.fetchTriviaData{ (result) in
             switch result {
@@ -69,6 +72,14 @@ class JepViewController: UIViewController {
 }
 //TODO: -- add function to get data
 
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = currentUser?.name
+    }
+    
+    
 
 
 
