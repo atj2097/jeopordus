@@ -15,10 +15,10 @@ struct TriviaWrapper: Codable {
     case trivia = "results"
   }
   
-  static func fetchTriviaData(completionHandler: @escaping (Result<[Trivia],AppError>) -> ()) {
-    let url = "https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=multiple"
-    
-    NetWorkManager.shared.fetchData(urlString: url) { (result) in
+    static func fetchTriviaData(Url: String,completionHandler: @escaping (Result<[Trivia],AppError>) -> ()) {
+//    let url = "https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=multiple"
+//
+    NetWorkManager.shared.fetchData(urlString: Url) { (result) in
       switch result {
       case .failure(let error):
         completionHandler(.failure(error))
