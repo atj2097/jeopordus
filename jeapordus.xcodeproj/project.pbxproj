@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503AB4F3232FD9EB006B2A6B /* imageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503AB4F2232FD9EB006B2A6B /* imageHelper.swift */; };
+		503AB4F5232FDA43006B2A6B /* errorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503AB4F4232FDA43006B2A6B /* errorHandling.swift */; };
 		CB347DB9232C22180023577D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DB8232C22180023577D /* AppDelegate.swift */; };
 		CB347DBE232C22180023577D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB347DBC232C22180023577D /* Main.storyboard */; };
 		CB347DC0232C221A0023577D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB347DBF232C221A0023577D /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		503AB4F2232FD9EB006B2A6B /* imageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageHelper.swift; sourceTree = "<group>"; };
+		503AB4F4232FDA43006B2A6B /* errorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorHandling.swift; sourceTree = "<group>"; };
 		CB347DB5232C22180023577D /* jeapordus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jeapordus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB347DB8232C22180023577D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB347DBD232C22180023577D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				CB347DF4232C2C780023577D /* newtorkHelper.swift */,
+				503AB4F2232FD9EB006B2A6B /* imageHelper.swift */,
+				503AB4F4232FDA43006B2A6B /* errorHandling.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -317,9 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */,
+				503AB4F3232FD9EB006B2A6B /* imageHelper.swift in Sources */,
 				CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */,
 				CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */,
 				CB347DB9232C22180023577D /* AppDelegate.swift in Sources */,
+				503AB4F5232FDA43006B2A6B /* errorHandling.swift in Sources */,
 				CB347DEF232C2C490023577D /* GameModel.swift in Sources */,
 				CB347DF3232C2C6A0023577D /* JeopDVC.swift in Sources */,
 			);
