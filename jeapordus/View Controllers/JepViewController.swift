@@ -12,7 +12,7 @@ class JepViewController: UIViewController {
     @IBOutlet weak var topicOne: UILabel!
     @IBOutlet weak var topicTwo: UILabel!
     @IBOutlet weak var randomTopic: UILabel!
-    var currentUser: User?
+    var currentUser: User!
     @IBOutlet var gameButtons: [UIButton]!
     
     
@@ -26,10 +26,15 @@ class JepViewController: UIViewController {
         
     
         
-//        self.navigationItem.title = currentUser?.name
+        self.navigationItem.title = currentUser?.name
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = currentUser?.name
     }
     
     
