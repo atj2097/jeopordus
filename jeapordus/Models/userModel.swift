@@ -10,7 +10,7 @@ import Foundation
 
 
 struct User {
-    var name: String
-    var lives: Int
-    var highScore: Int
+    var name: String?
+    var lives: Int?
+    var highScore: Int?
 }
