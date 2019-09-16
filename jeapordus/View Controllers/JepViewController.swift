@@ -14,49 +14,40 @@ class JepViewController: UIViewController {
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
     @IBOutlet var gameButtons: [UIButton]!
+    var trivia: [Trivia]?
     
     
     @IBAction func buttonFunction(_ sender: UIButton) {
-        var url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-        var id = sender.tag
+       
+        let id = sender.tag
         var mode = ""
         switch sender.titleLabel?.text {
         case "$200":
-        return mode = "easy"
+            return mode = "easy"
         case "$400":
-        return mode = "medium"
-        case "$600":
-        return   mode = "hard"
+            return mode = "medium"
         default:
-            "bla"
+            mode = "hard"
         }
-        url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=easy&type=multiple"
-        loadData()
+        let url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=\(mode)&type=multiple"
+        loadData(url: url)
+        
+        navigationController?.pushViewController(JeopDVC(), animated: true)
+        
     }
-    
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let showVc = segue.destination as? EpisodeViewController else {
-//            fatalError("Unexpected segue")
-//        }
-//        guard let selectedIndexPath = showTableVIew.indexPathForSelectedRow
-//            else { fatalError("No row selected") }
-//
-//    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        
         
         self.navigationItem.title = currentUser?.name
         
     }
     
-
-    private func loadData(){
-        TriviaWrapper.fetchTriviaData{ (result) in
+    
+    private func loadData(url: String){
+        TriviaWrapper.fetchTriviaData(Url: url){ (result) in
             switch result {
             case .failure(let error):
                 print(error)
@@ -70,14 +61,25 @@ class JepViewController: UIViewController {
     
     
 }
+
+
+    
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let showVc = segue.destination as? EpisodeViewController else {
+//            fatalError("Unexpected segue")
+//        }
+//        guard let selectedIndexPath = showTableVIew.indexPathForSelectedRow
+//            else { fatalError("No row selected") }
+//
+//    }
+
+
 //TODO: -- add function to get data
 
 
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = currentUser?.name
-    }
+
     
     
 
