@@ -13,6 +13,7 @@ class JeopDVC: UIViewController {
     @IBOutlet weak var Question: UITextView!
     
 
+
     
     @IBOutlet var buttonAnswers: [UIButton]!
     
@@ -21,9 +22,15 @@ class JeopDVC: UIViewController {
     
     
     
+
+
+    
+    var triviaInfo: Trivia?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Question.text = triviaInfo?.question
+
+
         // Do any additional setup after loading the view.
     }
     

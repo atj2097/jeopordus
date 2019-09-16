@@ -26,40 +26,39 @@ class JepViewController: UIViewController {
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
     @IBOutlet var gameButtons: [UIButton]!
+    var trivia: [Trivia]!
     
     
     @IBAction func buttonFunction(_ sender: UIButton) {
-        var url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-        var id = sender.tag
+       
+        let id = sender.tag
         var mode = ""
         switch sender.titleLabel?.text {
         case "$200":
-        return mode = "easy"
+             mode = "easy"
         case "$400":
-        return mode = "medium"
+             mode = "medium"
         case "$600":
-        return   mode = "hard"
+             mode = "hard"
         default:
-            "bla"
+           "none"
         }
-//        url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=easy&type=multiple"
-//        loadData()
-    }
-    
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let showVc = segue.destination as? EpisodeViewController else {
-//            fatalError("Unexpected segue")
-//        }
-//        guard let selectedIndexPath = showTableVIew.indexPathForSelectedRow
-//            else { fatalError("No row selected") }
-//
-//    }
 
+        
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let jeopDVC = storyboard.instantiateViewController(withIdentifier: "JeopDVC") as! JeopDVC
+        
+        let url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=\(mode)&type=multiple"
+        jeopDVC.triviaInfo = trivia[0]
+        navigationController?.pushViewController(jeopDVC, animated: true)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         self.navigationItem.title = currentUser?.name
        
         musicPlayer.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 16)
@@ -68,6 +67,7 @@ class JepViewController: UIViewController {
         playBackgoundVideo()
         
     }
+
     private func playBackgoundVideo() {
         if let filePath = Bundle.main.path(forResource: "video", ofType:"mp4") {
             let filePathUrl = NSURL.fileURL(withPath: filePath)
@@ -78,9 +78,24 @@ class JepViewController: UIViewController {
             NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.avPlayer?.currentItem, queue: nil) { (_) in
                 self.avPlayer?.seek(to: CMTime.zero)
                 self.avPlayer?.play()
+
+    
+    
+     func loadData(url: String){
+        TriviaWrapper.fetchTriviaData(Url: url){ (result) in
+            DispatchQueue.main.async {
+                
+                
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let triviaData):
+                    
+                    return self.trivia = triviaData
+                }
             }
             self.videoView.layer.addSublayer(playerLayer)
-            avPlayer?.play()
+            self.avPlayer?.play()
         }
     }
 
@@ -99,11 +114,26 @@ class JepViewController: UIViewController {
     
     
 }
+
+
+    
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let showVc = segue.destination as? EpisodeViewController else {
+//            fatalError("Unexpected segue")
+//        }
+//        guard let selectedIndexPath = showTableVIew.indexPathForSelectedRow
+//            else { fatalError("No row selected") }
+//
+//    }
+
+
 //TODO: -- add function to get data
 
+}
     
-    
+}
 
 
-
+}
 
