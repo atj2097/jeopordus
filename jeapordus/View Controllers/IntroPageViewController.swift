@@ -1,19 +1,17 @@
 //
-//  JepViewController.swift
+//  IntroPageViewController.swift
 //  jeapordus
 //
-//  Created by God on 9/13/19.
+//  Created by God on 9/16/19.
 //  Copyright © 2019 Jeapordus Team. All rights reserved.
 //
 
 import UIKit
 
-class JepViewController: UIViewController {
-    @IBOutlet weak var topicOne: UILabel!
-    @IBOutlet weak var topicTwo: UILabel!
-    @IBOutlet weak var randomTopic: UILabel!
+class IntroPageViewController: UIViewController {
+    @IBOutlet weak var nameField: UITextView!
     
-    @IBOutlet var gameButtons: [UIButton]!
+    @IBOutlet weak var startGameButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -18,6 +18,7 @@
 		CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF0232C2C5D0023577D /* JepViewController.swift */; };
 		CB347DF3232C2C6A0023577D /* JeopDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF2232C2C6A0023577D /* JeopDVC.swift */; };
 		CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF4232C2C780023577D /* newtorkHelper.swift */; };
+		CB347DF7232FE68A0023577D /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF6232FE68A0023577D /* IntroPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CB347DF0232C2C5D0023577D /* JepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JepViewController.swift; sourceTree = "<group>"; };
 		CB347DF2232C2C6A0023577D /* JeopDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopDVC.swift; sourceTree = "<group>"; };
 		CB347DF4232C2C780023577D /* newtorkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newtorkHelper.swift; sourceTree = "<group>"; };
+		CB347DF6232FE68A0023577D /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CB347DF0232C2C5D0023577D /* JepViewController.swift */,
+				CB347DF6232FE68A0023577D /* IntroPageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB347DF7232FE68A0023577D /* IntroPageViewController.swift in Sources */,
 				CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */,
 				CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */,
 				CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */,
