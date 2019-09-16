@@ -9,16 +9,26 @@
 import UIKit
 
 class IntroPageViewController: UIViewController {
+    var userIntial: User?
     @IBOutlet weak var nameField: UITextView!
     
     @IBOutlet weak var startGameButton: UIButton!
+    
+    @IBAction func pressedStart(_ sender: UIButton) {
+//        userIntial?.name = nameField.text
+//        userIntial?.highScore = 0
+//        userIntial?.lives = 3
+        
+        userIntial = User(name: nameField.text, lives: 3, highScore: 0)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
+   
     /*
     // MARK: - Navigation
 
@@ -28,5 +38,20 @@ class IntroPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let segueIdentifier = segue.identifier else {fatalError()}
+        switch segueIdentifier {
+        case "startGame":
+            guard let destinationVC = segue.destination as? JepViewController else {fatalError("unexpected segueVC")}
+            destinationVC.currentUser = userIntial
+        default:
+            print(fatalError("Not Workiong"))
+        }
+    }
+    
+    
+    
 
 }
+
