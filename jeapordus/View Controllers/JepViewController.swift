@@ -14,25 +14,70 @@ class JepViewController: UIViewController {
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
     @IBOutlet var gameButtons: [UIButton]!
+    var trivia: [Trivia]!
     
     
     @IBAction func buttonFunction(_ sender: UIButton) {
-        var url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-        var id = sender.tag
+       
+        let id = sender.tag
         var mode = ""
         switch sender.titleLabel?.text {
         case "$200":
-        return mode = "easy"
+             mode = "easy"
         case "$400":
-        return mode = "medium"
+             mode = "medium"
         case "$600":
-        return   mode = "hard"
+             mode = "hard"
         default:
-            "bla"
+           "none"
         }
-        url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=easy&type=multiple"
-        loadData()
+        
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let jeopDVC = storyboard.instantiateViewController(withIdentifier: "JeopDVC") as! JeopDVC
+        
+        let url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=\(mode)&type=multiple"
+        
+        loadData(url: url)
+        
+        
+        jeopDVC.triviaInfo = trivia[0]
+        
+        
+        navigationController?.pushViewController(jeopDVC, animated: true)
+        
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        self.navigationItem.title = currentUser?.name
+        
+    }
+    
+    
+    private func loadData(url: String){
+        TriviaWrapper.fetchTriviaData(Url: url){ (result) in
+            DispatchQueue.main.async {
+                
+                
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let triviaData):
+                    
+                    return self.trivia = triviaData
+                }
+            }
+        }
+    }
+    
+    
+}
+
+
     
 //
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,40 +89,12 @@ class JepViewController: UIViewController {
 //
 //    }
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    
-        
-        self.navigationItem.title = currentUser?.name
-        
-    }
-    
 
-    private func loadData(){
-        TriviaWrapper.fetchTriviaData{ (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let triviaData):
-                DispatchQueue.main.async{
-                    return self.trivia = triviaData
-                }
-            }
-        }
-    }
-    
-    
-}
 //TODO: -- add function to get data
 
 
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = currentUser?.name
-    }
+
     
     
 
