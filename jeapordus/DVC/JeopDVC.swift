@@ -10,6 +10,9 @@ import UIKit
 
 class JeopDVC: UIViewController {
 
+    @IBOutlet weak var Question: UITextView!
+    
+    @IBOutlet weak var answers: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

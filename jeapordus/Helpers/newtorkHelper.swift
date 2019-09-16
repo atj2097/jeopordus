@@ -14,6 +14,7 @@ class NetWorkManager {
     private init() {}
     static let shared = NetWorkManager()
     func fetchData(urlString: String,  completionHandler: @escaping (Result<Data,AppError>) -> ()) {
+        
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.badUrl))
             return

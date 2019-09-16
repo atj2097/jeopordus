@@ -19,10 +19,18 @@ class jeapordusTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+
+        func testShowDoesExist() {
+            let url = "https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=multiple"
+            NetWorkManager.shared.fetchData(urlString: url) {(result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let data):
+                    XCTAssert(data.isEmpty == false)
+                }
+            }
+        }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
