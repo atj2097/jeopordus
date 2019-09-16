@@ -12,10 +12,18 @@ class JeopDVC: UIViewController {
 
     @IBOutlet weak var Question: UITextView!
     
-    @IBOutlet weak var answers: UIButton!
+
+    
+    @IBOutlet var buttonAnswers: [UIButton]!
+    
+    @IBAction func buttonAnswerAct(_ sender: Any) {
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
