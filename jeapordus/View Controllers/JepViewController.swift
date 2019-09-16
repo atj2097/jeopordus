@@ -14,7 +14,7 @@ class JepViewController: UIViewController {
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
     @IBOutlet var gameButtons: [UIButton]!
-    var trivia: [Trivia]?
+    var trivia: [Trivia]!
     
     
     @IBAction func buttonFunction(_ sender: UIButton) {
@@ -23,16 +23,28 @@ class JepViewController: UIViewController {
         var mode = ""
         switch sender.titleLabel?.text {
         case "$200":
-            return mode = "easy"
+             mode = "easy"
         case "$400":
-            return mode = "medium"
+             mode = "medium"
+        case "$600":
+             mode = "hard"
         default:
-            mode = "hard"
+           "none"
         }
+        
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let jeopDVC = storyboard.instantiateViewController(withIdentifier: "JeopDVC") as! JeopDVC
+        
         let url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=\(mode)&type=multiple"
+        
         loadData(url: url)
         
-        navigationController?.pushViewController(JeopDVC(), animated: true)
+        
+        jeopDVC.triviaInfo = trivia[0]
+        
+        
+        navigationController?.pushViewController(jeopDVC, animated: true)
         
     }
     
@@ -48,11 +60,14 @@ class JepViewController: UIViewController {
     
     private func loadData(url: String){
         TriviaWrapper.fetchTriviaData(Url: url){ (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let triviaData):
-                DispatchQueue.main.async{
+            DispatchQueue.main.async {
+                
+                
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let triviaData):
+                    
                     return self.trivia = triviaData
                 }
             }
