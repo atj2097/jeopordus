@@ -21,11 +21,6 @@ class JeopDVC: UIViewController {
               Question.text = triviaInfo?.question
         }
     }
-    
-
-
-
-    
 
     
     @IBAction func buttonAnswerAct(_ sender: Any) {
@@ -33,23 +28,30 @@ class JeopDVC: UIViewController {
     
     @IBOutlet var countDownLabel: UILabel!
     
-    var count = 10
-
-        
+    var countTimer:Timer!
     
+    var counter = 30
+ 
+    @objc func updateCounter() {
+        //example functionality
+        if counter > -1 {
+            countDownLabel.text = "\(counter) seconds"
+            counter -= 1
+        }
+            
+        else {
+            _ = navigationController?.popViewController(animated: true)
+            
+        }
+    }
     
-//    func update() {
-//        if(count > 0) {
-//            countDownLabel.text = String(count-=1)
-//        }
-//    }
     override func viewWillAppear(_ animated: Bool) {
         loadData(mode: modeChoice!, id: buttonid!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-//        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    
         
         Question.text = triviaInfo?.question
         Question.font = UIFont(name: "MarkerFelt-Wide", size: 30)
