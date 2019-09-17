@@ -256,19 +256,18 @@
                             <constraint firstItem="cO8-6w-ITe" firstAttribute="top" secondItem="3FG-g0-s5v" secondAttribute="top" constant="443" id="DlA-vs-4Lk"/>
                             <constraint firstItem="p0I-1S-d3H" firstAttribute="trailing" secondItem="7tI-Ru-iL8" secondAttribute="trailing" constant="13" id="EGn-Dc-l6v"/>
                             <constraint firstItem="yAE-Lq-OSy" firstAttribute="centerX" secondItem="Nw5-Tx-TKq" secondAttribute="centerX" id="GOR-ic-aRe"/>
-                            <constraint firstItem="VOp-fd-gFf" firstAttribute="trailing" secondItem="DsK-GJ-cUN" secondAttribute="trailing" id="IUq-wb-CWv"/>
+                            <constraint firstItem="VOp-fd-gFf" firstAttribute="trailing" secondItem="DsK-GJ-cUN" secondAttribute="trailing" constant="7" id="IUq-wb-CWv"/>
                             <constraint firstItem="VOp-fd-gFf" firstAttribute="centerX" secondItem="j9r-sN-A61" secondAttribute="centerX" id="IZn-6t-ctg"/>
                             <constraint firstItem="VOp-fd-gFf" firstAttribute="centerX" secondItem="SDg-90-GL8" secondAttribute="centerX" id="Krd-PK-L9T"/>
                             <constraint firstItem="DsK-GJ-cUN" firstAttribute="leading" secondItem="cO8-6w-ITe" secondAttribute="trailing" constant="8" symbolic="YES" id="NwA-7A-nU7"/>
                             <constraint firstItem="VOp-fd-gFf" firstAttribute="width" secondItem="3FG-g0-s5v" secondAttribute="width" id="OWu-hW-HQm"/>
-                            <constraint firstItem="VOp-fd-gFf" firstAttribute="bottom" secondItem="p0I-1S-d3H" secondAttribute="bottom" id="PAY-LS-Gkt"/>
                             <constraint firstItem="pI2-i3-Tf8" firstAttribute="leading" secondItem="q7Y-DM-dAW" secondAttribute="leading" id="PHL-3f-YC0"/>
                             <constraint firstItem="CRZ-S5-TuL" firstAttribute="leading" secondItem="yAE-Lq-OSy" secondAttribute="trailing" constant="48" id="PT5-Pf-EhG"/>
                             <constraint firstItem="7tI-Ru-iL8" firstAttribute="centerX" secondItem="gOB-Vj-BeZ" secondAttribute="centerX" id="Q1m-xz-gkJ"/>
                             <constraint firstItem="cO8-6w-ITe" firstAttribute="top" secondItem="j9r-sN-A61" secondAttribute="bottom" constant="26" id="QpA-Wk-Klv"/>
                             <constraint firstItem="pI2-i3-Tf8" firstAttribute="top" secondItem="Nw5-Tx-TKq" secondAttribute="bottom" constant="69" id="RHj-Oa-4q3"/>
                             <constraint firstItem="gOB-Vj-BeZ" firstAttribute="top" secondItem="DsK-GJ-cUN" secondAttribute="bottom" constant="51" id="Swd-tw-Dbu"/>
-                            <constraint firstItem="VOp-fd-gFf" firstAttribute="top" secondItem="p0I-1S-d3H" secondAttribute="top" id="VI9-Gt-MB9"/>
+                            <constraint firstItem="VOp-fd-gFf" firstAttribute="bottom" secondItem="p0I-1S-d3H" secondAttribute="bottom" id="VaS-oH-d8U"/>
                             <constraint firstItem="yAE-Lq-OSy" firstAttribute="top" secondItem="p0I-1S-d3H" secondAttribute="top" constant="93" id="VfU-hT-Vab"/>
                             <constraint firstItem="cO8-6w-ITe" firstAttribute="leading" secondItem="pI2-i3-Tf8" secondAttribute="trailing" constant="8" symbolic="YES" id="YhU-1u-8ke"/>
                             <constraint firstItem="SDg-90-GL8" firstAttribute="top" secondItem="cO8-6w-ITe" secondAttribute="bottom" constant="99" id="cn0-cC-rJS"/>
@@ -284,6 +283,7 @@
                             <constraint firstItem="yAE-Lq-OSy" firstAttribute="leading" secondItem="pI2-i3-Tf8" secondAttribute="leading" id="mBl-ZU-55m"/>
                             <constraint firstItem="DsK-GJ-cUN" firstAttribute="leading" secondItem="Zci-q4-Erj" secondAttribute="leading" id="nwX-8c-RM6"/>
                             <constraint firstAttribute="bottom" secondItem="DsK-GJ-cUN" secondAttribute="bottom" constant="304" id="r4e-R9-P9S"/>
+                            <constraint firstItem="VOp-fd-gFf" firstAttribute="top" secondItem="7tI-Ru-iL8" secondAttribute="top" id="znO-31-gYC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p0I-1S-d3H"/>
                     </view>
@@ -373,12 +373,20 @@
                                     <action selector="buttonAnswerAct:" destination="YLz-zb-C7D" eventType="touchUpInside" id="FhK-DG-N4k"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="um5-7r-Jg0">
+                                <rect key="frame" x="82" y="674" width="251" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.97877007719999998" green="0.94440072770000005" blue="0.32134842870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fOP-tr-XwL"/>
                     </view>
                     <connections>
                         <outlet property="Question" destination="0gW-tD-koU" id="b7X-xX-UPT"/>
+                        <outlet property="countDownLabel" destination="um5-7r-Jg0" id="evM-8o-tRJ"/>
                         <outletCollection property="buttonAnswers" destination="6bx-yG-9i8" collectionClass="NSMutableArray" id="jU8-eo-yCt"/>
                         <outletCollection property="buttonAnswers" destination="09s-lz-NUj" collectionClass="NSMutableArray" id="wyO-yb-yS5"/>
                         <outletCollection property="buttonAnswers" destination="g1C-0V-PWV" collectionClass="NSMutableArray" id="VIC-Wm-OdI"/>
