@@ -9,8 +9,10 @@
 import UIKit
 
 class IntroPageViewController: UIViewController {
+
+    var userInitial: User?
     var userIntial: User?
-    
+
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var startGameButton: UIButton!
@@ -24,6 +26,7 @@ class IntroPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         startGameButton.backgroundColor = .clear
         startGameButton.layer.cornerRadius = 5
         startGameButton.layer.borderWidth = 3
@@ -43,25 +46,19 @@ class IntroPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+
     }
-    */
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         guard let segueIdentifier = segue.identifier else {fatalError()}
         switch segueIdentifier {
         case "startGame":
             guard let destinationVC = segue.destination as? JepViewController else {fatalError("unexpected segueVC")}
-//            userIntial?.name = nameField.textm
-            destinationVC.currentUser = userIntial
-            //destinationVC.navigationItem.title = userIntial?.name
+            userInitial = User(name: nameField.text, lives: 5, highScore: 0)
+            destinationVC.currentUser = userInitial
         default:
-            print(fatalError("Not Workiong"))
+            print(fatalError("Not Working"))
         }
     }
-//
-    
-    
-
 }
 
