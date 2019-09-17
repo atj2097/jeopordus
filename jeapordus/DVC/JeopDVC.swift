@@ -12,7 +12,7 @@ class JeopDVC: UIViewController {
     
     
     @IBOutlet weak var Question: UITextView!
-    
+    var delegate: passData?
     var buttonid: Int?
     var modeChoice: String?
     var shuffledAnswers = [String]()
@@ -28,13 +28,14 @@ class JeopDVC: UIViewController {
     @IBOutlet var buttonAnswers: [UIButton]!
     @IBAction func buttonAnswerAct(_ sender: UIButton) {
         if sender.titleLabel?.text == triviaInfo?.correctAnswer{
-            
-            
-        }else {
-            view.backgroundColor = .red
-            
+            sender.setImage(UIImage(named: "check"), for: .normal)
+            delegate?.UserData(data: "+")
+        }else{
+             sender.setImage(UIImage(named: "wrong"), for: .normal)
+            delegate?.UserData(data: "-")
         }
-    }
+         self.navigationController?.popViewController(animated: true)
+}
     
     
     
@@ -96,7 +97,7 @@ class JeopDVC: UIViewController {
     func setUpButtons(){
         for (k,v) in shuffledAnswers.enumerated(){
             buttonAnswers[k].setTitle(v, for: .normal)
-            
+    
         }
     }
     
@@ -114,5 +115,8 @@ class JeopDVC: UIViewController {
             }
         }
     }
-    
+}
+
+protocol passData {
+    func UserData(data: String)
 }
