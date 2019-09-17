@@ -44,11 +44,6 @@ struct Trivia: Codable {
   let question: String
   let correctAnswer: String
   let incorrectAnswer: [String]
-    func answersShuffle()-> [String]{
-    var shuffle = incorrectAnswer
-    shuffle.append(correctAnswer)
-    return shuffle.shuffled()
-    }
   
   private enum CodingKeys: String, CodingKey {
     case category

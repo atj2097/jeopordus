@@ -9,26 +9,42 @@
 import UIKit
 
 class JeopDVC: UIViewController {
-
-    @IBOutlet weak var Question: UITextView!
-    @IBOutlet var buttonAnswers: [UIButton]!
     
-
+    
+    @IBOutlet weak var Question: UITextView!
+    
     var buttonid: Int?
     var modeChoice: String?
+    var shuffledAnswers = [String]()
     var triviaInfo: Trivia?{
         didSet{
-              Question.text = triviaInfo?.question
+            Question.text = triviaInfo?.question.removingPercentEncoding
+            shuffledAnswers = (self.triviaInfo?.answersShuffle())!
+            setUpButtons()
         }
     }
 
     
-    @IBAction func buttonAnswerAct(_ sender: Any) {
+    @IBOutlet var buttonAnswers: [UIButton]!
+    @IBAction func buttonAnswerAct(_ sender: UIButton) {
+        if sender.titleLabel?.text == triviaInfo?.correctAnswer{
+            
+            
+        }else {
+            view.backgroundColor = .red
+            
+        }
     }
+    
+    
     
     @IBOutlet var countDownLabel: UILabel!
     
+
     var countTimer:Timer!
+
+    var count = 10
+
     
     var counter = 30
  
@@ -44,24 +60,47 @@ class JeopDVC: UIViewController {
             
         }
     }
+
     
+    //    func update() {
+    //        if(count > 0) {
+    //            countDownLabel.text = String(count-=1)
+    //        }
+    //    }
+    
+
     override func viewWillAppear(_ animated: Bool) {
         loadData(mode: modeChoice!, id: buttonid!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     
+
+        
+        Question.text = triviaInfo?.question
+        //        var timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        //
+
         
         Question.text = triviaInfo?.question
         Question.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         for buttons in buttonAnswers {
             buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         }
-
+        
         // Do any additional setup after loading the view.
-
+        
     }
+    func setUpButtons(){
+        for (k,v) in shuffledAnswers.enumerated(){
+            buttonAnswers[k].setTitle(v, for: .normal)
+            
+        }
+    }
+    
+    
     private func loadData(mode: String, id: Int){
         TriviaWrapper.fetchTriviaData(mode: mode, id: id){ (result) in
             DispatchQueue.main.async {
@@ -75,5 +114,5 @@ class JeopDVC: UIViewController {
             }
         }
     }
-
+    
 }
