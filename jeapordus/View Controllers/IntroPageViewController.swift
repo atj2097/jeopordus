@@ -11,7 +11,6 @@ import UIKit
 class IntroPageViewController: UIViewController {
 
     var userInitial: User?
-    var userIntial: User?
 
     @IBOutlet weak var nameField: UITextField!
     
