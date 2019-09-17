@@ -6,14 +6,20 @@ class JepViewController: UIViewController {
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
     var counter = 0
+    var score = 0
+    var amount = 0
     @IBOutlet var gameButtons: [UIButton]!
     var trivia: [Trivia]!
+
     @IBOutlet weak var musicButton: UIButton!
     
     @IBAction func musicStop(_ sender: UIButton) {
         MusicPlayer.shared.stopBackgroundMusic()
     }
     
+
+    var scoreIncrement = ""
+
     @IBAction func buttonFunction(_ sender: UIButton) {
         let id = sender.tag
         var mode = ""
@@ -21,10 +27,13 @@ class JepViewController: UIViewController {
         switch sender.titleLabel?.text {
         case "$200":
             mode = "easy"
+            amount = 200
         case "$400":
             mode = "medium"
+            amount = 400
         case "$600":
             mode = "hard"
+            amount = 600
         default:
             "none"}
         print(id)
@@ -35,8 +44,10 @@ class JepViewController: UIViewController {
         
         jeopDVC.buttonid = id
         jeopDVC.modeChoice = mode
+        jeopDVC.delegate = self
         navigationController?.pushViewController(jeopDVC, animated: true)
     }
+
    
     
     override func viewDidLoad() {
@@ -56,4 +67,21 @@ class JepViewController: UIViewController {
         
     }
     }
+
+    func updateScore(sign: String){
+        if sign == "+"{
+            score += amount
+        }else {
+            score -= amount
+            counter += 1
+        }}
+
+    override func viewWillAppear(_ animated: Bool) {
+        updateScore(sign: scoreIncrement)
+    }
+}
+extension JepViewController: passData{
+    func UserData(data: String) {
+        self.scoreIncrement = data
+    }    
 }

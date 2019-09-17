@@ -18,7 +18,7 @@ class JeopDVC: UIViewController {
     var modeChoice: String?
     var triviaInfo: Trivia?{
         didSet{
-              Question.text = triviaInfo?.question
+              Question.text = triviaInfo?.question.stringByDecodingHTMLEntities
         }
     }
     
@@ -31,15 +31,19 @@ class JeopDVC: UIViewController {
     @IBAction func buttonAnswerAct(_ sender: Any) {
     }
     
+    var currentUser: User!
+    
 
     override func viewWillAppear(_ animated: Bool) {
         loadData(mode: modeChoice!, id: buttonid!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true// once completed this should be true
+        self.navigationItem.title = currentUser.name
 
         
-        Question.text = triviaInfo?.question
+        Question.text = triviaInfo?.question.stringByDecodingHTMLEntities
 
 
         // Do any additional setup after loading the view.

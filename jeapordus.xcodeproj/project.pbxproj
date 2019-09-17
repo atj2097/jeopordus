@@ -176,8 +176,8 @@
 		CB347DE9232C29CE0023577D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CB347DF0232C2C5D0023577D /* JepViewController.swift */,
 				CB347DF6232FE68A0023577D /* IntroPageViewController.swift */,
+				CB347DF0232C2C5D0023577D /* JepViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
