@@ -1,8 +1,8 @@
 import UIKit
 
 class JepViewController: UIViewController {
-    @IBOutlet weak var topicOne: UILabel!
-    @IBOutlet weak var topicTwo: UILabel!
+    @IBOutlet weak var music: UILabel!
+    @IBOutlet weak var compSci: UILabel!
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
     var counter = 0
@@ -38,18 +38,14 @@ class JepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topicOne.font = UIFont(name: "MarkerFelt-Wide", size: 30)
-        topicTwo.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        music.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        compSci.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         randomTopic.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         
         for buttons in gameButtons {
             buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 30)
             
-            
         }
-        
-        
-        
-        
+
     }
 }
