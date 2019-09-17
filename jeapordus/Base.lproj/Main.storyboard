@@ -219,9 +219,6 @@
                                 <state key="normal" title="Stop Music">
                                     <color key="titleColor" red="0.99207025766372681" green="0.99221235513687134" blue="0.9920392632484436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="stopmusicButton:" destination="Yty-x8-t1T" eventType="touchUpInside" id="Qrb-dh-j3t"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="topic2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRZ-S5-TuL">
                                 <rect key="frame" x="149" y="222" width="117" height="44"/>
@@ -247,7 +244,6 @@
                         <viewLayoutGuide key="safeArea" id="p0I-1S-d3H"/>
                     </view>
                     <connections>
-                        <outlet property="musicPlayer" destination="7tI-Ru-iL8" id="eIv-N0-WgR"/>
                         <outlet property="randomTopic" destination="x9I-1L-oSA" id="K4Q-Dv-NWk"/>
                         <outlet property="topicOne" destination="yAE-Lq-OSy" id="LFY-kJ-hz7"/>
                         <outlet property="topicTwo" destination="CRZ-S5-TuL" id="iqF-Zf-Jzw"/>

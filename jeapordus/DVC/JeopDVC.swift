@@ -31,7 +31,7 @@ class JeopDVC: UIViewController {
     @IBAction func buttonAnswerAct(_ sender: Any) {
     }
     
-=
+
     override func viewWillAppear(_ animated: Bool) {
         loadData(mode: modeChoice!, id: buttonid!)
     }
