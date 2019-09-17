@@ -19,6 +19,7 @@ class JepViewController: UIViewController {
     @IBOutlet weak var topicTwo: UILabel!
     @IBOutlet weak var randomTopic: UILabel!
     var currentUser: User!
+    var counter = 0
     @IBOutlet var gameButtons: [UIButton]!
     var trivia: [Trivia]!
     
@@ -26,31 +27,42 @@ class JepViewController: UIViewController {
     @IBAction func buttonFunction(_ sender: UIButton) {
         let id = sender.tag
         var mode = ""
+        
         switch sender.titleLabel?.text {
         case "$200":
-             mode = "easy"
+            mode = "easy"
         case "$400":
-             mode = "medium"
+            mode = "medium"
         case "$600":
-             mode = "hard"
+            mode = "hard"
         default:
+
+            "none"}
+        print(id)
+        sender.isHidden = true
+
            "none"
         }
-
-        
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let jeopDVC = storyboard.instantiateViewController(withIdentifier: "JeopDVC") as! JeopDVC
         
+
+        jeopDVC.buttonid = id
+        jeopDVC.modeChoice = mode
+
         let url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=\(mode)&type=multiple"
         jeopDVC.triviaInfo = trivia[0]
+
         navigationController?.pushViewController(jeopDVC, animated: true)
-        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = currentUser?.name
+    }
+
         musicPlayer.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 16)
         topicOne.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         topicTwo.font = UIFont(name: "MarkerFelt-Wide", size: 30)
@@ -92,10 +104,6 @@ class JepViewController: UIViewController {
 //            }
 //        }
 //    }
-    
-    
-
-
 
     
 //
@@ -109,11 +117,7 @@ class JepViewController: UIViewController {
 //    }
 
 
-//TODO: -- add function to get data
-
 }
-    
-
 
 }
 
