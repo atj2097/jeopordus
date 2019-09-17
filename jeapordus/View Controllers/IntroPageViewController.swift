@@ -38,27 +38,23 @@ class IntroPageViewController: UIViewController {
        
     }
    
-    /*
-    // MARK: - Navigation
+   
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-
-    }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifier = segue.identifier else {fatalError()}
         switch segueIdentifier {
         case "startGame":
             guard let destinationVC = segue.destination as? JepViewController else {fatalError("unexpected segueVC")}
-            userInitial = User(name: nameField.text, lives: 5, highScore: 0)
+            userInitial = User(name: nameField.text, lives: 5, Score: 0)
             destinationVC.currentUser = userInitial
+            let backItem = UIBarButtonItem()
+            backItem.title = "Quit"
+            navigationItem.backBarButtonItem = backItem
         default:
             print(fatalError("Not Working"))
         }
     }
 }
- */
-}
+
+

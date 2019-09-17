@@ -45,8 +45,8 @@ struct Trivia: Codable {
   let correctAnswer: String
   let incorrectAnswer: [String]
     func answersShuffle()-> [String]{
-    var shuffle = incorrectAnswer
-    shuffle.append(correctAnswer)
+        var shuffle = incorrectAnswer.map{$0.stringByDecodingHTMLEntities}
+    shuffle.append(correctAnswer.stringByDecodingHTMLEntities)
     return shuffle.shuffled()
     }
   

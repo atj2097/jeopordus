@@ -18,7 +18,7 @@ class JeopDVC: UIViewController {
     var shuffledAnswers = [String]()
     var triviaInfo: Trivia?{
         didSet{
-            Question.text = triviaInfo?.question.removingPercentEncoding
+            Question.text = triviaInfo?.question.stringByDecodingHTMLEntities
             shuffledAnswers = (self.triviaInfo?.answersShuffle())!
             setUpButtons()
         }
@@ -26,6 +26,9 @@ class JeopDVC: UIViewController {
 
     
     @IBOutlet var buttonAnswers: [UIButton]!
+    
+    var currentUser: User!
+    
     @IBAction func buttonAnswerAct(_ sender: UIButton) {
         if sender.titleLabel?.text == triviaInfo?.correctAnswer{
             sender.setImage(UIImage(named: "check"), for: .normal)
@@ -78,6 +81,8 @@ class JeopDVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = currentUser.name
 
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
 

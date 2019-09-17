@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		503AB4F3232FD9EB006B2A6B /* imageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503AB4F2232FD9EB006B2A6B /* imageHelper.swift */; };
 		503AB4F5232FDA43006B2A6B /* errorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503AB4F4232FDA43006B2A6B /* errorHandling.swift */; };
+		CB2E5CE623318F9F001797BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E5CE523318F9F001797BE /* Extensions.swift */; };
 		CB347DB9232C22180023577D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DB8232C22180023577D /* AppDelegate.swift */; };
 		CB347DBE232C22180023577D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB347DBC232C22180023577D /* Main.storyboard */; };
 		CB347DC0232C221A0023577D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB347DBF232C221A0023577D /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		503AB4F2232FD9EB006B2A6B /* imageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageHelper.swift; sourceTree = "<group>"; };
 		503AB4F4232FDA43006B2A6B /* errorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorHandling.swift; sourceTree = "<group>"; };
+		CB2E5CE523318F9F001797BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CB347DB5232C22180023577D /* jeapordus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jeapordus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB347DB8232C22180023577D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB347DBD232C22180023577D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				CB347DF8232FEE6B0023577D /* userModel.swift */,
 				CBC6191D23302DB800C98328 /* countdownMusic.mp3 */,
 				CBC6191F23302DCE00C98328 /* MusicFile.swift */,
+				CB2E5CE523318F9F001797BE /* Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				503AB4F3232FD9EB006B2A6B /* imageHelper.swift in Sources */,
 				CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */,
 				CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */,
+				CB2E5CE623318F9F001797BE /* Extensions.swift in Sources */,
 				CB347DB9232C22180023577D /* AppDelegate.swift in Sources */,
 				503AB4F5232FDA43006B2A6B /* errorHandling.swift in Sources */,
 				CB347DEF232C2C490023577D /* GameModel.swift in Sources */,
