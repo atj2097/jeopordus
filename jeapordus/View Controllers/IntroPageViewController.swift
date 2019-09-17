@@ -17,10 +17,7 @@ class IntroPageViewController: UIViewController {
     
     @IBOutlet weak var jeopordyText: UILabel!
     @IBAction func pressedStart(_ sender: UIButton) {
-//        userIntial?.name = nameField.text
-//        userIntial?.highScore = 0
-//        userIntial?.lives =
-        userIntial = User(name: nameField.text, lives: 5, highScore: 0)
+
      
     }
     
