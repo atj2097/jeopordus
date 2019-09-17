@@ -47,11 +47,14 @@ class JeopDVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadData(mode: modeChoice!, id: buttonid!)
+   
+        super.viewWillAppear(animated)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-    
+    countDownLabel.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         
         Question.text = triviaInfo?.question
         Question.font = UIFont(name: "MarkerFelt-Wide", size: 30)

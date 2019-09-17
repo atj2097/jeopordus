@@ -8,7 +8,11 @@ class JepViewController: UIViewController {
     var counter = 0
     @IBOutlet var gameButtons: [UIButton]!
     var trivia: [Trivia]!
+    @IBOutlet weak var musicButton: UIButton!
     
+    @IBAction func musicStop(_ sender: UIButton) {
+        MusicPlayer.shared.stopBackgroundMusic()
+    }
     
     @IBAction func buttonFunction(_ sender: UIButton) {
         let id = sender.tag
@@ -33,19 +37,23 @@ class JepViewController: UIViewController {
         jeopDVC.modeChoice = mode
         navigationController?.pushViewController(jeopDVC, animated: true)
     }
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        setUI()
+    }
+   //SetUpUI
+ private func setUI () {
+    musicButton.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 25)
+    music.font = UIFont(name: "MarkerFelt-Wide", size: 25)
+    compSci.font = UIFont(name: "MarkerFelt-Wide", size: 25)
+    randomTopic.font = UIFont(name: "MarkerFelt-Wide", size: 25)
+    
+    for buttons in gameButtons {
+        buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 25)
         
-        music.font = UIFont(name: "MarkerFelt-Wide", size: 30)
-        compSci.font = UIFont(name: "MarkerFelt-Wide", size: 30)
-        randomTopic.font = UIFont(name: "MarkerFelt-Wide", size: 30)
-        
-        for buttons in gameButtons {
-            buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 30)
-            
-        }
-
+    }
     }
 }
