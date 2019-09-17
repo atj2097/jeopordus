@@ -15,9 +15,9 @@ struct TriviaWrapper: Codable {
     case trivia = "results"
   }
   
-  static func fetchTriviaData(completionHandler: @escaping (Result<[Trivia],AppError>) -> ()) {
-    let url = "https://opentdb.com/api.php?amount=10&category=27&difficulty=medium&type=multiple"
-    
+    static func fetchTriviaData(mode: String, id: Int,completionHandler: @escaping (Result<Trivia,AppError>) -> ()) {
+    let url = "https://opentdb.com/api.php?amount=1&category=\(id)&difficulty=\(mode)&type=multiple"
+
     NetWorkManager.shared.fetchData(urlString: url) { (result) in
       switch result {
       case .failure(let error):
@@ -26,7 +26,7 @@ struct TriviaWrapper: Codable {
         do {
           let trivia = try JSONDecoder().decode(TriviaWrapper.self, from: data)
                     dump(data)
-          completionHandler(.success(trivia.trivia))
+          completionHandler(.success(trivia.trivia[0]))
         } catch {
           completionHandler(.failure(.networkError))
           print(error)
@@ -53,5 +53,4 @@ struct Trivia: Codable {
     case correctAnswer = "correct_answer"
     case incorrectAnswer = "incorrect_answers"
   }
-  
 }

@@ -10,21 +10,53 @@ import UIKit
 
 class JeopDVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var Question: UITextView!
+    
 
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var answers: UIButton!
+    var buttonid: Int?
+    var modeChoice: String?
+    var triviaInfo: Trivia?{
+        didSet{
+              Question.text = triviaInfo?.question
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+    
+    @IBOutlet var buttonAnswers: [UIButton]!
+    
+    @IBAction func buttonAnswerAct(_ sender: Any) {
     }
-    */
+    
+=
+    override func viewWillAppear(_ animated: Bool) {
+        loadData(mode: modeChoice!, id: buttonid!)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        
+        Question.text = triviaInfo?.question
+
+
+        // Do any additional setup after loading the view.
+
+    }
+    private func loadData(mode: String, id: Int){
+        TriviaWrapper.fetchTriviaData(mode: mode, id: id){ (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let triviaData):
+                    dump(triviaData)
+                    return self.triviaInfo = triviaData
+                }
+            }
+        }
+    }
 
 }
