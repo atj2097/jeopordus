@@ -10,16 +10,10 @@ import UIKit
 import AVFoundation
 
 class JepViewController: UIViewController {
-    var avPlayer: AVPlayer!
-    var avPlayerLayer: AVPlayerLayer!
-    var paused: Bool = false
-    @IBOutlet weak var videoView: UIView!
+   
     @IBOutlet weak var musicPlayer: UIButton!
     @IBAction func stopmusicButton(_ sender: UIButton) {
-        
-      
             MusicPlayer.shared.stopBackgroundMusic()
-        
     }
     @IBOutlet weak var topicOne: UILabel!
     @IBOutlet weak var topicTwo: UILabel!
@@ -30,7 +24,6 @@ class JepViewController: UIViewController {
     
     
     @IBAction func buttonFunction(_ sender: UIButton) {
-       
         let id = sender.tag
         var mode = ""
         switch sender.titleLabel?.text {
@@ -57,30 +50,20 @@ class JepViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = currentUser?.name
+        musicPlayer.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 16)
+        topicOne.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        topicTwo.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        randomTopic.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        musicPlayer.layer.borderColor = UIColor.white.cgColor
+        for buttons in gameButtons {
+            buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        }
         
 
-        self.navigationItem.title = currentUser?.name
-       
-        musicPlayer.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 16)
-        musicPlayer.layer.borderColor = UIColor.white.cgColor
-        
-        playBackgoundVideo()
         
     }
 
-    private func playBackgoundVideo() {
-        if let filePath = Bundle.main.path(forResource: "video", ofType:"mp4") {
-            let filePathUrl = NSURL.fileURL(withPath: filePath)
-            avPlayer = AVPlayer(url: filePathUrl)
-            let playerLayer = AVPlayerLayer(player: avPlayer)
-            playerLayer.frame = self.videoView.bounds
-            playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.avPlayer?.currentItem, queue: nil) { (_) in
-                self.avPlayer?.seek(to: CMTime.zero)
-                self.avPlayer?.play()
-
-    
-    
      func loadData(url: String){
         TriviaWrapper.fetchTriviaData(Url: url){ (result) in
             DispatchQueue.main.async {
@@ -94,10 +77,8 @@ class JepViewController: UIViewController {
                     return self.trivia = triviaData
                 }
             }
-            self.videoView.layer.addSublayer(playerLayer)
-            self.avPlayer?.play()
         }
-    }
+    
 
 //    private func loadData(){
 //        TriviaWrapper.fetchTriviaData{ (result) in
@@ -113,12 +94,12 @@ class JepViewController: UIViewController {
 //    }
     
     
-}
+
 
 
     
 //
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        guard let showVc = segue.destination as? EpisodeViewController else {
 //            fatalError("Unexpected segue")
 //        }
@@ -132,8 +113,8 @@ class JepViewController: UIViewController {
 
 }
     
-}
 
 
 }
+
 

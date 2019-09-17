@@ -35,7 +35,7 @@ class IntroPageViewController: UIViewController {
         startGameButton.layer.borderColor = UIColor.white.cgColor
         jeopordyText.font = UIFont(name: "MarkerFelt-Wide", size: 70)
         
-        MusicPlayer.shared.startBackgroundMusic()
+//        MusicPlayer.shared.startBackgroundMusic()
         // Do any additional setup after loading the view.
     }
    
