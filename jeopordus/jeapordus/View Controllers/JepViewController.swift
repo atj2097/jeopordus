@@ -31,6 +31,7 @@ class JepViewController: UIViewController {
         
         jeopDVC.buttonid = id
         jeopDVC.modeChoice = mode
+        jeopDVC.currentUser = currentUser
         navigationController?.pushViewController(jeopDVC, animated: true)
     }
     
@@ -41,6 +42,8 @@ class JepViewController: UIViewController {
         topicOne.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         topicTwo.font = UIFont(name: "MarkerFelt-Wide", size: 30)
         randomTopic.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        self.navigationItem.title = currentUser.name
+    
         
         for buttons in gameButtons {
             buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 30)

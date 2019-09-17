@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		287E40432331790D00C2A26D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E40422331790D00C2A26D /* Extensions.swift */; };
 		503AB4F3232FD9EB006B2A6B /* imageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503AB4F2232FD9EB006B2A6B /* imageHelper.swift */; };
 		503AB4F5232FDA43006B2A6B /* errorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503AB4F4232FDA43006B2A6B /* errorHandling.swift */; };
 		CB347DB9232C22180023577D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DB8232C22180023577D /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		287E40422331790D00C2A26D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		503AB4F2232FD9EB006B2A6B /* imageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageHelper.swift; sourceTree = "<group>"; };
 		503AB4F4232FDA43006B2A6B /* errorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorHandling.swift; sourceTree = "<group>"; };
 		CB347DB5232C22180023577D /* jeapordus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jeapordus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 				CB347DF8232FEE6B0023577D /* userModel.swift */,
 				CBC6191D23302DB800C98328 /* countdownMusic.mp3 */,
 				CBC6191F23302DCE00C98328 /* MusicFile.swift */,
+				287E40422331790D00C2A26D /* Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				503AB4F3232FD9EB006B2A6B /* imageHelper.swift in Sources */,
 				CB347DF1232C2C5D0023577D /* JepViewController.swift in Sources */,
 				CB347DED232C2BD20023577D /* JeopordyAPI.swift in Sources */,
+				287E40432331790D00C2A26D /* Extensions.swift in Sources */,
 				CB347DB9232C22180023577D /* AppDelegate.swift in Sources */,
 				503AB4F5232FDA43006B2A6B /* errorHandling.swift in Sources */,
 				CB347DEF232C2C490023577D /* GameModel.swift in Sources */,

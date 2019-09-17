@@ -44,6 +44,7 @@ struct Trivia: Codable {
   let question: String
   let correctAnswer: String
   let incorrectAnswer: [String]
+
   
   private enum CodingKeys: String, CodingKey {
     case category
