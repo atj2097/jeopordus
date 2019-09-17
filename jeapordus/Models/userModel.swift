@@ -12,5 +12,5 @@ import Foundation
 struct User {
     var name: String?
     var lives: Int?
-    var highScore: Int?
+    var Score: Int?
 }
