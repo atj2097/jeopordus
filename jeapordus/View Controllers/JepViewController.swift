@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class JepViewController: UIViewController {
+   
+    @IBOutlet weak var musicPlayer: UIButton!
+    @IBAction func stopmusicButton(_ sender: UIButton) {
+            MusicPlayer.shared.stopBackgroundMusic()
+    }
     @IBOutlet weak var topicOne: UILabel!
     @IBOutlet weak var topicTwo: UILabel!
     @IBOutlet weak var randomTopic: UILabel!
@@ -30,15 +36,24 @@ class JepViewController: UIViewController {
         case "$600":
             mode = "hard"
         default:
+
             "none"}
         print(id)
         sender.isHidden = true
+
+           "none"
+        }
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let jeopDVC = storyboard.instantiateViewController(withIdentifier: "JeopDVC") as! JeopDVC
         
+
         jeopDVC.buttonid = id
         jeopDVC.modeChoice = mode
+
+        let url = "https://opentdb.com/api.php?amount=10&category=\(id)&difficulty=\(mode)&type=multiple"
+        jeopDVC.triviaInfo = trivia[0]
+
         navigationController?.pushViewController(jeopDVC, animated: true)
     }
     
@@ -47,19 +62,63 @@ class JepViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = currentUser?.name
     }
+
+        musicPlayer.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 16)
+        topicOne.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        topicTwo.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        randomTopic.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        musicPlayer.layer.borderColor = UIColor.white.cgColor
+        for buttons in gameButtons {
+            buttons.titleLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 30)
+        }
+        
+
+        
+    }
+
+     func loadData(url: String){
+        TriviaWrapper.fetchTriviaData(Url: url){ (result) in
+            DispatchQueue.main.async {
+                
+                
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let triviaData):
+                    
+                    return self.trivia = triviaData
+                }
+            }
+        }
     
 
+//    private func loadData(){
+//        TriviaWrapper.fetchTriviaData{ (result) in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let triviaData):
+//                DispatchQueue.main.async{
+//                    return self.trivia = triviaData
+//                }
+//            }
+//        }
+//    }
+
     
+//
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let showVc = segue.destination as? EpisodeViewController else {
+//            fatalError("Unexpected segue")
+//        }
+//        guard let selectedIndexPath = showTableVIew.indexPathForSelectedRow
+//            else { fatalError("No row selected") }
+//
+//    }
+
+
 }
 
-
-
-
-
-
-
-
-
-
+}
 
 

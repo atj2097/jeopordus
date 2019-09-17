@@ -22,6 +22,8 @@
 		CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF4232C2C780023577D /* newtorkHelper.swift */; };
 		CB347DF7232FE68A0023577D /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF6232FE68A0023577D /* IntroPageViewController.swift */; };
 		CB347DF9232FEE6B0023577D /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB347DF8232FEE6B0023577D /* userModel.swift */; };
+		CBC6191E23302DB800C98328 /* countdownMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CBC6191D23302DB800C98328 /* countdownMusic.mp3 */; };
+		CBC6192023302DCE00C98328 /* MusicFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6191F23302DCE00C98328 /* MusicFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		CB347DF4232C2C780023577D /* newtorkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newtorkHelper.swift; sourceTree = "<group>"; };
 		CB347DF6232FE68A0023577D /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		CB347DF8232FEE6B0023577D /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
+		CBC6191D23302DB800C98328 /* countdownMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdownMusic.mp3; sourceTree = "<group>"; };
+		CBC6191F23302DCE00C98328 /* MusicFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 			children = (
 				CB347DEE232C2C490023577D /* GameModel.swift */,
 				CB347DF8232FEE6B0023577D /* userModel.swift */,
+				CBC6191D23302DB800C98328 /* countdownMusic.mp3 */,
+				CBC6191F23302DCE00C98328 /* MusicFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				CB347DC3232C221A0023577D /* LaunchScreen.storyboard in Resources */,
 				CB347DC0232C221A0023577D /* Assets.xcassets in Resources */,
 				CB347DBE232C22180023577D /* Main.storyboard in Resources */,
+				CBC6191E23302DB800C98328 /* countdownMusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC6192023302DCE00C98328 /* MusicFile.swift in Sources */,
 				CB347DF7232FE68A0023577D /* IntroPageViewController.swift in Sources */,
 				CB347DF5232C2C780023577D /* newtorkHelper.swift in Sources */,
 				CB347DF9232FEE6B0023577D /* userModel.swift in Sources */,
